@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AnonseWeb.Models;
+using static AnonseWeb.Data.ApplicationDbContext;
 
 namespace AnonseWeb.Controllers
 {

@@ -6,6 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using AnonseWeb.Models;
+using AnonseWeb.Data;
+using static AnonseWeb.Data.ApplicationDbContext;
 
 namespace AnonseWeb
 {
