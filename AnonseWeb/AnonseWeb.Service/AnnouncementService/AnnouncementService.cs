@@ -27,6 +27,11 @@ namespace AnonseWeb.Service.AnnouncementService
             db.Announcements.Add(announcement);
         }
 
+        public void InsertFile(File file)
+        {
+            db.Files.Add(file);
+        }
+
         public void Save()
         {
             db.SaveChanges();

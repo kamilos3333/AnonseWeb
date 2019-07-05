@@ -12,6 +12,7 @@ namespace AnonseWeb.Service.AnnouncementService
         IList<City> getAllCity();
         IList<Category> getAllCategory();
         void InsertAnnouncement(Announcement announcement);
+        void InsertFile(File file);
         void Save();
     }
 }
