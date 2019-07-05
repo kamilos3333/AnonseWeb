@@ -90,6 +90,18 @@
     <Compile Include="Migrations\201907051058485_editNameColumnInCity.Designer.cs">
       <DependentUpon>201907051058485_editNameColumnInCity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907051215156_deleteColumnUserId.cs" />
+    <Compile Include="Migrations\201907051215156_deleteColumnUserId.Designer.cs">
+      <DependentUpon>201907051215156_deleteColumnUserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907051423487_addUserIdColumnToAnnouncement.cs" />
+    <Compile Include="Migrations\201907051423487_addUserIdColumnToAnnouncement.Designer.cs">
+      <DependentUpon>201907051423487_addUserIdColumnToAnnouncement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907051424287_addUserIdColumnToAnnouncement1.cs" />
+    <Compile Include="Migrations\201907051424287_addUserIdColumnToAnnouncement1.Designer.cs">
+      <DependentUpon>201907051424287_addUserIdColumnToAnnouncement1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Announcement.cs" />
     <Compile Include="Model\Category.cs" />
@@ -137,6 +149,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907051058485_editNameColumnInCity.resx">
       <DependentUpon>201907051058485_editNameColumnInCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907051215156_deleteColumnUserId.resx">
+      <DependentUpon>201907051215156_deleteColumnUserId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907051423487_addUserIdColumnToAnnouncement.resx">
+      <DependentUpon>201907051423487_addUserIdColumnToAnnouncement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907051424287_addUserIdColumnToAnnouncement1.resx">
+      <DependentUpon>201907051424287_addUserIdColumnToAnnouncement1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -82,6 +82,29 @@ namespace AnonseWeb.Data.Migrations
             city.ForEach(k => context.Cities.AddOrUpdate(k));
             context.SaveChanges();
 
+            var category = new List<Category>
+            {
+                new Category() { CategoryId = 1, CategoryName = "Nieruchomoœci"},
+                new Category() { CategoryId = 2, CategoryName = "Budownictwo"},
+                new Category() { CategoryId = 3, CategoryName = "Dom"},
+                new Category() { CategoryId = 4, CategoryName = "Audio video"},
+                new Category() { CategoryId = 5, CategoryName = "Komputery"},
+                new Category() { CategoryId = 6, CategoryName = "Telefony"},
+                new Category() { CategoryId = 7, CategoryName = "Edukacja"},
+                new Category() { CategoryId = 8, CategoryName = "Dla dzieci"},
+                new Category() { CategoryId = 9, CategoryName = "Wyposa¿enie i maszyny"},
+                new Category() { CategoryId = 10, CategoryName = "Rolnictwo i ogrodnictwo"},
+                new Category() { CategoryId = 11, CategoryName = "Motoryzacja i transport"},
+                new Category() { CategoryId = 12, CategoryName = "Hobby"},
+                new Category() { CategoryId = 13, CategoryName = "Roœliny i zwierzêta"},
+                new Category() { CategoryId = 14, CategoryName = "Sport i rekreacja"},
+                new Category() { CategoryId = 15, CategoryName = "Turystyka"},
+                new Category() { CategoryId = 16, CategoryName = "Zdrowie"},
+                new Category() { CategoryId = 17, CategoryName = "Moda"},
+            };
+            category.ForEach(k => context.Categories.AddOrUpdate(k));
+            context.SaveChanges();
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

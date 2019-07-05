@@ -10,8 +10,6 @@ namespace AnonseWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
         public ActionResult Index()
         {
             return View();
