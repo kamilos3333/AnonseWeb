@@ -14,7 +14,6 @@ namespace AnonseWeb.Controllers
 
         public ActionResult Index()
         {
-
             return View();
         }
 

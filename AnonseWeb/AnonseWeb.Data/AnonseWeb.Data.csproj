@@ -70,6 +70,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Migrations\201907041455249_editDataTypeCity.cs" />
+    <Compile Include="Migrations\201907041455249_editDataTypeCity.Designer.cs">
+      <DependentUpon>201907041455249_editDataTypeCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907041500387_editDataTypeCity1.cs" />
+    <Compile Include="Migrations\201907041500387_editDataTypeCity1.Designer.cs">
+      <DependentUpon>201907041500387_editDataTypeCity1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907041502565_editDataTypeCity2.cs" />
+    <Compile Include="Migrations\201907041502565_editDataTypeCity2.Designer.cs">
+      <DependentUpon>201907041502565_editDataTypeCity2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907041739541_ContentData.cs" />
+    <Compile Include="Migrations\201907041739541_ContentData.Designer.cs">
+      <DependentUpon>201907041739541_ContentData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907051058485_editNameColumnInCity.cs" />
+    <Compile Include="Migrations\201907051058485_editNameColumnInCity.Designer.cs">
+      <DependentUpon>201907051058485_editNameColumnInCity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Announcement.cs" />
     <Compile Include="Model\Category.cs" />
@@ -101,6 +121,23 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201907041455249_editDataTypeCity.resx">
+      <DependentUpon>201907041455249_editDataTypeCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907041500387_editDataTypeCity1.resx">
+      <DependentUpon>201907041500387_editDataTypeCity1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907041502565_editDataTypeCity2.resx">
+      <DependentUpon>201907041502565_editDataTypeCity2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907041739541_ContentData.resx">
+      <DependentUpon>201907041739541_ContentData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907051058485_editNameColumnInCity.resx">
+      <DependentUpon>201907051058485_editNameColumnInCity.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,11 +4,10 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using static AnonseWeb.Data.ApplicationDbContext;
 
 namespace AnonseWeb.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationDbContext.ApplicationUser>
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<City> Cities { get; set; }

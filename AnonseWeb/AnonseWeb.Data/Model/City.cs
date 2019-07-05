@@ -12,7 +12,8 @@ namespace AnonseWeb.Model
         [Key]
         public int CityId { get; set; }
         public string CityName { get; set; }
-        public double log { get; set; }
+        
+        public double lat { get; set; }
         public double lon { get; set; }
 
         public virtual ICollection<Announcement> announcements { get; set; }
