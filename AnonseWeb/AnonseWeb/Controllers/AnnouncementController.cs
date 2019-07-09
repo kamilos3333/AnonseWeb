@@ -1,10 +1,13 @@
 ﻿using AnonseWeb.Feature;
+using AnonseWeb.Feature.Statistic;
 using AnonseWeb.Service.AnnouncementService;
 using AnonseWeb.ViewModel;
+using AutoMapper;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -14,18 +17,23 @@ namespace AnonseWeb.Controllers
     {
         private IAnnouncementService announcementService;
         private NewAnnouncement newAnnouncement;
+        private CountVisitor countVisitor;
+        private DeleteAnnouncement deleteAnnouncement;
+        private EditAnnouncement editAnnouncement;
         public AnnouncementController(IAnnouncementService _announcementService)
         {
             announcementService = _announcementService;
             newAnnouncement = new NewAnnouncement(_announcementService);
+            countVisitor = new CountVisitor(_announcementService);
+            deleteAnnouncement = new DeleteAnnouncement(_announcementService);
+            editAnnouncement = new EditAnnouncement(_announcementService);
         }
 
         [HttpGet]
         [Authorize]
         public ActionResult Create()
         {
-
-            return View(newAnnouncement.RebuildModel());
+            return View(newAnnouncement.RebuildModelAnnouncement());
         }
         
         [HttpPost]
@@ -35,10 +43,60 @@ namespace AnonseWeb.Controllers
             if (ModelState.IsValid)
             {
                 newAnnouncement.CreateNewAnnouncement(model, User.Identity.GetUserId());
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("UserAnnouncement", "User");
             }
 
-            return View(newAnnouncement.RebuildModel());
+            return View(newAnnouncement.RebuildModelAnnouncement());
+        }
+
+        [OutputCache(Duration = 20)]
+        public ActionResult Detail(int AnnouncementId)
+        {
+            if (AnnouncementId <= 0)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var detail = announcementService.getAnnouncementId(AnnouncementId);
+            if(detail == null)
+            {
+                return HttpNotFound();
+            }
+            countVisitor.IncreaseVisitor(AnnouncementId);
+            return View(Mapper.Map(detail, new DetailAnnouncementViewModel()));
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int AnnouncementId)
+        {
+           if (AnnouncementId <= 0)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var model = announcementService.getAnnouncementId(AnnouncementId);
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(Mapper.Map(model, new EditAnnouncementViewModel()));
+        }
+
+        [HttpPost]
+        public ActionResult Edit(EditAnnouncementViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                editAnnouncement.Edit(model);
+                return RedirectToAction("UserAnnouncement", "User");
+            }
+
+            return View();
+        }
+
+        public ActionResult Delete(int AnnouncementId)
+        {
+            deleteAnnouncement.Delete(AnnouncementId);
+            return RedirectToAction("UserAnnouncement", "User");
         }
     }
 }

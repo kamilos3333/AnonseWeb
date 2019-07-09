@@ -1,0 +1,112 @@
+﻿@model AnonseWeb.ViewModel.DetailAnnouncementViewModel
+@using AnonseWeb.Helpers
+@{
+    ViewBag.Title = "Szczegóły ogłoszenia";
+}
+
+<h2>Szczegóły ogłoszenia</h2>
+<div class="container">
+    <div class="row">
+        <hr>
+        <div class="col-6">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.AnnouncementName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AnnouncementName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AnnouncementDesc)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AnnouncementDesc)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateBegin)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateBegin)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DateEnd)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DateEnd)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Visitor)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Visitor)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CategoryName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CityName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CityName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cost)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Cost)
+                </dd>
+            </dl>
+        </div>
+        <div class="col-6">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Photo)
+                </dt>
+
+                <dd>
+                    <img src="@Url.AnnouncementImgPath(Model.Photo)" style="width: 100%;" />
+                </dd>
+
+                <dd>
+                    <h3>Kontakt</h3>
+                    <hr />
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+</div>

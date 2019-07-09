@@ -21,10 +21,11 @@ namespace AnonseWeb.Model
         public int CategoryId { get; set; }
         public int CityId { get; set; }
         public string Id { get; set; }
+        public int Cost { get; set; }
 
         public virtual Category categories { get; set; }
         public virtual City cities { get; set; }
         public ApplicationUser users { get; set; }
-        public virtual IEnumerable<File> files { get; set; }
+        public virtual ICollection<File> files { get; set; }
     }
 }

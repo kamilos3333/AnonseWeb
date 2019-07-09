@@ -25,27 +25,29 @@ namespace AnonseWeb.Feature
             {
                 AnnouncementName = model.AnnouncementName,
                 Description = model.AnnouncementDescription,
+                Cost = model.Cost,
                 CityId = model.CityId,
                 CategoryId = model.CategoryId,
-                DateBegin = model.DateBegin,
+                DateBegin = DateTime.Now,
                 DateEnd = model.DateEnd,
                 Status = Status.Aktywny.ToString(),
                 Visitor = 0,
                 Id = UserId
             };
+
             announcementService.InsertAnnouncement(announcement);
             announcementService.Save();
             newImage.CreateNewImage(model.ImageUpload, announcement.AnnouncementId);
         }
 
-        public CreateAnnouncementViewModel RebuildModel()
+        public CreateAnnouncementViewModel RebuildModelAnnouncement()
         {
-            CreateAnnouncementViewModel announcementModel = new CreateAnnouncementViewModel();
+            var announcementModel = new CreateAnnouncementViewModel();
             announcementModel.CityList = announcementService.getAllCity();
             announcementModel.CategoryList = announcementService.getAllCategory();
 
             return announcementModel;
         }
-        
+
     }
 }

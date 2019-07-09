@@ -1,5 +1,6 @@
 using AnonseWeb.Controllers;
 using AnonseWeb.Service.AnnouncementService;
+using AnonseWeb.Service.SearchService;
 using System.Web.Mvc;
 using Unity;
 using Unity.Injection;
@@ -21,6 +22,7 @@ namespace AnonseWeb
             container.RegisterType<AccountController>(new InjectionConstructor());
             container.RegisterType<ManageController>(new InjectionConstructor());
             container.RegisterType<IAnnouncementService, AnnouncementService>();
+            container.RegisterType<ISearchService, SearchService>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

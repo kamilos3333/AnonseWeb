@@ -1,12 +1,11 @@
-﻿using System;
+﻿using AnonseWeb.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using AnonseWeb.Models;
 
 namespace AnonseWeb.Controllers
 {
@@ -15,7 +14,6 @@ namespace AnonseWeb.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
         public ManageController()
         {
         }
@@ -74,7 +72,7 @@ namespace AnonseWeb.Controllers
             };
             return View(model);
         }
-
+        
         //
         // POST: /Manage/RemoveLogin
         [HttpPost]

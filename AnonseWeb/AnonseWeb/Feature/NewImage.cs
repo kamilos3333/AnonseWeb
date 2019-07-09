@@ -20,7 +20,12 @@ namespace AnonseWeb.Feature
         public void CreateNewImage(HttpPostedFileBase image, int AnnouncementId)
         {
             var fileName = ImageUpload.InsertImage(image);
-            
+
+            InsertImageToDatabase(AnnouncementId, fileName);
+        }
+
+        private void InsertImageToDatabase(int AnnouncementId, string fileName)
+        {
             File file = new File
             {
                 AnnouncementId = AnnouncementId,

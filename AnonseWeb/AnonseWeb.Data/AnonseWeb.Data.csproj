@@ -102,6 +102,14 @@
     <Compile Include="Migrations\201907051424287_addUserIdColumnToAnnouncement1.Designer.cs">
       <DependentUpon>201907051424287_addUserIdColumnToAnnouncement1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907051755370_AddCostToAnnoucement.cs" />
+    <Compile Include="Migrations\201907051755370_AddCostToAnnoucement.Designer.cs">
+      <DependentUpon>201907051755370_AddCostToAnnoucement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907051758272_AddCostToAnnoucement1.cs" />
+    <Compile Include="Migrations\201907051758272_AddCostToAnnoucement1.Designer.cs">
+      <DependentUpon>201907051758272_AddCostToAnnoucement1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Announcement.cs" />
     <Compile Include="Model\Category.cs" />
@@ -110,7 +118,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907051424287_addUserIdColumnToAnnouncement1.resx">
       <DependentUpon>201907051424287_addUserIdColumnToAnnouncement1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907051755370_AddCostToAnnoucement.resx">
+      <DependentUpon>201907051755370_AddCostToAnnoucement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907051758272_AddCostToAnnoucement1.resx">
+      <DependentUpon>201907051758272_AddCostToAnnoucement1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
