@@ -52,7 +52,7 @@
         @foreach (var searchResult in Model.AnnouncementList)
         {
 
-            <a href="@Url.Action("Detail", "Announcement", new { AnnouncementId = searchResult.AnnouncementId })">@searchResult.AnnouncementName</a>
+            <a href="@Url.Action("Detail", "Announcement", new { announcementId = searchResult.AnnouncementId })">@searchResult.AnnouncementName</a>
 
         }
     </div>

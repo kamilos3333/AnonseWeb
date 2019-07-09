@@ -17,8 +17,8 @@
                 @item.AnnouncementName
             </td>
             <td>
-                <a href="@Url.Action("Edit","Announcement", new { AnnouncementId = item.AnnouncementId })">Edytuj</a> |
-                <a href="@Url.Action("Delete","Announcement", new { AnnouncementId = item.AnnouncementId })" onclick="return confirm('Czy na pewno mam usunąć ogłoszenie?')">Usuń</a>
+                <a href="@Url.Action("Edit","Announcement", new { announcementId = item.AnnouncementId })">Edytuj</a> |
+                <a href="@Url.Action("Delete","Announcement", new { announcementId = item.AnnouncementId })" onclick="return confirm('Czy na pewno mam usunąć ogłoszenie?')">Usuń</a>
             </td>
         </tr>
     }

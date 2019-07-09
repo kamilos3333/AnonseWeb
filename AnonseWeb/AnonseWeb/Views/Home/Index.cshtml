@@ -13,7 +13,7 @@
                 <div class="list-group">
                     @foreach (var itemAnnon in Model.AnnouncementList)
                     {
-                        <a href="@Url.Action("Detail","Announcement", new { AnnouncementId = itemAnnon.AnnouncementId})" class="list-group-item list-group-item-action">
+                        <a href="@Url.Action("Detail","Announcement", new { announcementId = itemAnnon.AnnouncementId})" class="list-group-item list-group-item-action">
                             <div class="media">
                                 <img class="mr-3" src="@Url.AnnouncementImgPath(itemAnnon.files.First().FileName)" style="width: 50%" alt="Generic placeholder image">
                                 <div class="media-body">

@@ -50,29 +50,29 @@ namespace AnonseWeb.Controllers
         }
 
         [OutputCache(Duration = 20)]
-        public ActionResult Detail(int AnnouncementId)
+        public ActionResult Detail(int announcementId)
         {
-            if (AnnouncementId <= 0)
+            if (announcementId <= 0)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var detail = announcementService.getAnnouncementId(AnnouncementId);
+            var detail = announcementService.getAnnouncementId(announcementId);
             if(detail == null)
             {
                 return HttpNotFound();
             }
-            countVisitor.IncreaseVisitor(AnnouncementId);
+            countVisitor.IncreaseVisitor(announcementId);
             return View(Mapper.Map(detail, new DetailAnnouncementViewModel()));
         }
 
         [HttpGet]
-        public ActionResult Edit(int AnnouncementId)
+        public ActionResult Edit(int announcementId)
         {
-           if (AnnouncementId <= 0)
+           if (announcementId <= 0)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var model = announcementService.getAnnouncementId(AnnouncementId);
+            var model = announcementService.getAnnouncementId(announcementId);
             if (model == null)
             {
                 return HttpNotFound();
@@ -93,9 +93,9 @@ namespace AnonseWeb.Controllers
             return View();
         }
 
-        public ActionResult Delete(int AnnouncementId)
+        public ActionResult Delete(int announcementId)
         {
-            deleteAnnouncement.Delete(AnnouncementId);
+            deleteAnnouncement.Delete(announcementId);
             return RedirectToAction("UserAnnouncement", "User");
         }
     }
