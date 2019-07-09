@@ -49,8 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnnouncementService\AnnouncementService.cs" />
-    <Compile Include="AnnouncementService\IAnnouncementService.cs" />
+    <Compile Include="AdvertisementService\AdvertisementService.cs" />
+    <Compile Include="AdvertisementService\IAdvertisementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchService\ISearchService.cs" />
     <Compile Include="SearchService\SearchService.cs" />

@@ -8,15 +8,15 @@ using System.Web;
 
 namespace AnonseWeb.ViewModel
 {
-    public class CreateAnnouncementViewModel
+    public class CreateAdvertisementViewModel
     {
         [Required]
         [Display(Name = "Tytuł ogloszenia")]
-        public string AnnouncementName { get; set; }
+        public string AdvertisementName { get; set; }
 
 
         [Display(Name = "Opis")]
-        public string AnnouncementDescription { get; set; }
+        public string AdvertisementDescription { get; set; }
         
         [Display(Name = "Data zakończenia ogłoszenia")]
         [DataType(DataType.Date)]

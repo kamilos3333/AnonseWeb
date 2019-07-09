@@ -11,13 +11,13 @@
             <div class="container">
                 <h3>Nowe ogłoszenia</h3>
                 <div class="list-group">
-                    @foreach (var itemAnnon in Model.AnnouncementList)
+                    @foreach (var itemAnnon in Model.AdvertisementList)
                     {
-                        <a href="@Url.Action("Detail","Announcement", new { announcementId = itemAnnon.AnnouncementId})" class="list-group-item list-group-item-action">
+                        <a href="@Url.Action("Detail","Advertisement", new { advertisementId = itemAnnon.AdvertisementId})" class="list-group-item list-group-item-action">
                             <div class="media">
-                                <img class="mr-3" src="@Url.AnnouncementImgPath(itemAnnon.files.First().FileName)" style="width: 50%" alt="Generic placeholder image">
+                                <img class="mr-3" src="@Url.AdvertisementImgPath(itemAnnon.files.First().FileName)" style="width: 50%" alt="Generic placeholder image">
                                 <div class="media-body">
-                                    <h5 class="mt-0">@itemAnnon.AnnouncementName</h5>
+                                    <h5 class="mt-0">@itemAnnon.AdvertisementName</h5>
                                     @itemAnnon.Description
                                 </div>
                             </div>

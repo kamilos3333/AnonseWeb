@@ -8,30 +8,30 @@ namespace AnonseWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private IAnnouncementService announcementService;
+        private IAdvertisementService advertisementService;
         private ISearchService searchService;
-        SearchFeature searchFeature; 
-        public HomeController(IAnnouncementService _announcementService, ISearchService _searchService)
+        private SearchFeature searchFeature; 
+        public HomeController(IAdvertisementService _advertisementService, ISearchService _searchService)
         {
-            searchFeature = new SearchFeature(_searchService, _announcementService);
-            announcementService = _announcementService;
+            searchFeature = new SearchFeature(_searchService, _advertisementService);
+            advertisementService = _advertisementService;
             searchService = _searchService;
         }
         
         public ActionResult Index()
         {
-            HomeViewModel model = new HomeViewModel(announcementService.AnnouncementForClient());
+            HomeViewModel model = new HomeViewModel(advertisementService.advertisementForClient());
             return View(model);
         }
 
         [ValidateInput(false)]
-        public ActionResult AnnouncementSearch(SearchViewModel searchModel)
+        public ActionResult AdvertisementSearch(SearchViewModel searchModel)
         {
             searchFeature.RebuildModelSearch(searchModel);
 
             if (ModelState.IsValid)
             {
-                searchModel.AnnouncementList = searchFeature.SearchAnnouncement(searchModel.CityId, searchModel.SearchValueName, searchModel.Distance);
+                searchModel.AdvertisementList = searchFeature.SearchAdvertisement(searchModel.CityId, searchModel.SearchValueName, searchModel.Distance);
                 searchFeature.RebuildModelSearch(searchModel);
                 return View(searchModel);
             }

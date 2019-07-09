@@ -1,4 +1,4 @@
-﻿@model AnonseWeb.ViewModel.DetailAnnouncementViewModel
+﻿@model AnonseWeb.ViewModel.DetailAdvertisementViewModel
 @using AnonseWeb.Helpers
 @{
     ViewBag.Title = "Szczegóły ogłoszenia";
@@ -11,19 +11,19 @@
         <div class="col-6">
             <dl class="dl-horizontal">
                 <dt>
-                    @Html.DisplayNameFor(model => model.AnnouncementName)
+                    @Html.DisplayNameFor(model => model.AdvertisementName)
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.AnnouncementName)
+                    @Html.DisplayFor(model => model.AdvertisementName)
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.AnnouncementDesc)
+                    @Html.DisplayNameFor(model => model.AdvertisementDesc)
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.AnnouncementDesc)
+                    @Html.DisplayFor(model => model.AdvertisementDesc)
                 </dd>
 
                 <dt>
@@ -82,7 +82,7 @@
                 </dt>
 
                 <dd>
-                    <img src="@Url.AnnouncementImgPath(Model.Photo)" style="width: 100%;" />
+                    <img src="@Url.AdvertisementImgPath(Model.Photo)" style="width: 100%;" />
                 </dd>
 
                 <dd>

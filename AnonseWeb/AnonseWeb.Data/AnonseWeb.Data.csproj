@@ -110,8 +110,12 @@
     <Compile Include="Migrations\201907051758272_AddCostToAnnoucement1.Designer.cs">
       <DependentUpon>201907051758272_AddCostToAnnoucement1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907091855484_fix.cs" />
+    <Compile Include="Migrations\201907091855484_fix.Designer.cs">
+      <DependentUpon>201907091855484_fix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Announcement.cs" />
+    <Compile Include="Model\Advertisement.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\City.cs" />
     <Compile Include="Model\File.cs" />
@@ -174,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907051758272_AddCostToAnnoucement1.resx">
       <DependentUpon>201907051758272_AddCostToAnnoucement1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907091855484_fix.resx">
+      <DependentUpon>201907091855484_fix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,8 +12,8 @@ namespace AnonseWeb.Model
         [Key]
         public int FileId { get; set; }
         public string FileName { get; set; }
-        public int AnnouncementId { get; set; }
+        public int AdvertisementId { get; set; }
 
-        public virtual Announcement announcement { get; set; }
+        public virtual Advertisement advertisements { get; set; }
     }
 }

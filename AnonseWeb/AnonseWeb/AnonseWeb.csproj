@@ -247,15 +247,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AnnouncementController.cs" />
+    <Compile Include="Controllers\AdvertisementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="CustomValidation\FileAttribute .cs" />
     <Compile Include="Enums\Status.cs" />
-    <Compile Include="Feature\AnnouncementManage\DeleteAnnouncement.cs" />
-    <Compile Include="Feature\AnnouncementManage\EditAnnouncement.cs" />
-    <Compile Include="Feature\AnnouncementManage\NewAnnouncement.cs" />
+    <Compile Include="Feature\AdvertisementManage\DeleteAdvertisement.cs" />
+    <Compile Include="Feature\AdvertisementManage\EditAdvertisement.cs" />
+    <Compile Include="Feature\AdvertisementManage\NewAdvertisement.cs" />
     <Compile Include="Feature\NewImage.cs" />
     <Compile Include="Feature\SearchManage\SearchFeature.cs" />
     <Compile Include="Feature\StatisticManage\CountVisitor.cs" />
@@ -271,12 +271,12 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModel\CreateAnnouncementViewModel.cs" />
-    <Compile Include="ViewModel\DetailAnnouncementViewModel.cs" />
-    <Compile Include="ViewModel\EditAnnouncementViewModel.cs" />
+    <Compile Include="ViewModel\CreateAdvertisementViewModel.cs" />
+    <Compile Include="ViewModel\DetailAdvertisementViewModel.cs" />
+    <Compile Include="ViewModel\EditAdvertisementViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\SearchViewModel.cs" />
-    <Compile Include="ViewModel\UserAnnouncementViewModel.cs" />
+    <Compile Include="ViewModel\UserAdvertisementViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -376,11 +376,11 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Announcement\Create.cshtml" />
-    <Content Include="Views\Announcement\Detail.cshtml" />
+    <Content Include="Views\Advertisement\Create.cshtml" />
+    <Content Include="Views\Advertisement\Detail.cshtml" />
     <Content Include="Views\Shared\Info.cshtml" />
-    <Content Include="Views\User\UserAnnouncement.cshtml" />
-    <Content Include="Views\Home\AnnouncementSearch.cshtml" />
+    <Content Include="Views\User\UserAdvertisement.cshtml" />
+    <Content Include="Views\Home\AdvertisementSearch.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
@@ -394,7 +394,7 @@
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
-    <Content Include="Views\Announcement\Edit.cshtml" />
+    <Content Include="Views\Advertisement\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -21,6 +21,6 @@ namespace AnonseWeb.ViewModel
         [Display(Name = "Odległość")]
         public int Distance { get; set; }
 
-        public IQueryable<Announcement> AnnouncementList { get; set; }
+        public IQueryable<Advertisement> AdvertisementList { get; set; }
     }
 }

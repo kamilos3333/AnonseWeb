@@ -11,17 +11,18 @@ namespace AnonseWeb.Controllers
 {
     public class UserController : Controller
     {
-        private IAnnouncementService announcementService;
-        public UserController(IAnnouncementService _announcementService)
+        private IAdvertisementService advertisementService;
+        public UserController(IAdvertisementService _advertisementService)
         {
-            announcementService = _announcementService;
+            advertisementService = _advertisementService;
         }
 
         // GET: User
-        public ActionResult UserAnnouncement()
+        [Authorize]
+        public ActionResult UserAdvertisement()
         {
-            var getUserAnnouncement = announcementService.getUserAnnouncement(User.Identity.GetUserId());
-            var model = new UserAnnouncementViewModel(getUserAnnouncement);
+            var getUserAnnouncement = advertisementService.getUserAdvertisement(User.Identity.GetUserId());
+            var model = new UserAdvertisementViewModel(getUserAnnouncement);
             return View(model);
         }
     }

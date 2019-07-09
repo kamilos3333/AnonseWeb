@@ -1,0 +1,27 @@
+﻿@model  AnonseWeb.ViewModel.UserAdvertisementViewModel
+
+@{
+    ViewBag.Title = "Moje ogłoszenia";
+}
+
+<h2>Moje ogłoszenia</h2>
+
+<table class="table">
+        <tr>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model.AdvertisementList) {
+        <tr>
+            <td>
+                @item.AdvertisementName
+            </td>
+            <td>
+                <a href="@Url.Action("Edit","Advertisement", new { advertisementId = item.AdvertisementId })">Edytuj</a> |
+                <a href="@Url.Action("Delete","Advertisement", new { advertisementId = item.AdvertisementId })" onclick="return confirm('Czy na pewno mam usunąć ogłoszenie?')">Usuń</a>
+            </td>
+        </tr>
+    }
+
+    </table>
+

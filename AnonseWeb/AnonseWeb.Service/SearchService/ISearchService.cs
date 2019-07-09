@@ -6,7 +6,7 @@ namespace AnonseWeb.Service.SearchService
 {
     public interface ISearchService
     {
-        IQueryable<Announcement> SearchAnnouncement();
-        City GetCityId(int CityId);
+        IQueryable<Advertisement> searchAdvertisement();
+        City getCityId(int cityId);
     }
 }

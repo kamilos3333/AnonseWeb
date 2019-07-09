@@ -8,11 +8,11 @@ using static AnonseWeb.Data.ApplicationDbContext;
 
 namespace AnonseWeb.Model
 {
-    public class Announcement
+    public class Advertisement
     {
         [Key]
-        public int AnnouncementId { get; set; }
-        public string AnnouncementName { get; set; }
+        public int AdvertisementId { get; set; }
+        public string AdvertisementName { get; set; }
         public string Description { get; set; }
         public DateTime DateBegin { get; set; }
         public DateTime DateEnd { get; set; }

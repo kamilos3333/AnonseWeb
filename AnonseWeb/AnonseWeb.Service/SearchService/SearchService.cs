@@ -9,14 +9,14 @@ namespace AnonseWeb.Service.SearchService
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        public City GetCityId(int CityId)
+        public City getCityId(int cityId)
         {
-            return db.Cities.FirstOrDefault(a => a.CityId == CityId);
+            return db.Cities.FirstOrDefault(a => a.CityId == cityId);
         }
 
-        public IQueryable<Announcement>SearchAnnouncement()
+        public IQueryable<Advertisement> searchAdvertisement()
         {
-           return db.Announcements.Include("Cities").AsQueryable();
+           return db.Advertisements.Include("Cities").AsQueryable();
         }
         
     }

@@ -13,6 +13,6 @@ namespace AnonseWeb.Model
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
 
-        public virtual ICollection<Announcement> announcements { get; set; }
+        public virtual ICollection<Advertisement> advertisements { get; set; }
     }
 }

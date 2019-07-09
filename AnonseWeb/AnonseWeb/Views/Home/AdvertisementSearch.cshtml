@@ -1,17 +1,17 @@
 ﻿@model AnonseWeb.ViewModel.SearchViewModel
 
 @{
-    ViewBag.Title = "AnnouncementSearch";
+    ViewBag.Title = "Wyszukiwanie";
 }
 
-<h2>AnnouncementSearch</h2>
+<h2>Wyszukiwanie</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>SearchViewModel</h4>
+        <h4>Wyszukiwanie</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -46,13 +46,13 @@
     </div>
 }
 
-@if (Model.AnnouncementList != null)
+@if (Model.AdvertisementList != null)
 {
     <div class="list-group">
-        @foreach (var searchResult in Model.AnnouncementList)
+        @foreach (var searchResult in Model.AdvertisementList)
         {
 
-            <a href="@Url.Action("Detail", "Announcement", new { announcementId = searchResult.AnnouncementId })">@searchResult.AnnouncementName</a>
+            <a href="@Url.Action("Detail", "Advertisement", new { advertisementId = searchResult.AdvertisementId })">@searchResult.AdvertisementName</a>
 
         }
     </div>

@@ -10,50 +10,50 @@ namespace AnonseWeb.Feature.Search
     public class SearchFeature
     {
         private ISearchService searchService;
-        private IAnnouncementService announcementService;
-        public SearchFeature(ISearchService _searchService, IAnnouncementService _announcementService)
+        private IAdvertisementService advertisementService;
+        public SearchFeature(ISearchService _searchService, IAdvertisementService _advertisementService)
         {
             searchService = _searchService;
-            announcementService = _announcementService;
+            advertisementService = _advertisementService;
         }
 
-        public IQueryable<Announcement> SearchAnnouncement(int CityId, string SearchValueName, int Distance)
+        public IQueryable<Advertisement> SearchAdvertisement(int cityId, string searchValueName, int distance)
         {
-            var query = searchService.SearchAnnouncement();
-            query = SearchByCity(CityId, query);
-            query = SearchByCordinate(Distance, CityId, query);
-            query = SearchByName(SearchValueName, query);
+            var query = searchService.searchAdvertisement();
+            query = SearchByCity(cityId, query);
+            query = SearchByCordinate(distance, cityId, query);
+            query = SearchByName(searchValueName, query);
             
             return query;
         }
 
-        private IQueryable<Announcement> SearchByName(string SearchValueName, IQueryable<Announcement> query)
+        private IQueryable<Advertisement> SearchByName(string searchValueName, IQueryable<Advertisement> query)
         {
-            if (SearchValueName != null)
+            if (searchValueName != null)
             {
-                query = query.Where(a => a.AnnouncementName.Contains(SearchValueName));
+                query = query.Where(a => a.AdvertisementName.Contains(searchValueName));
             }
 
             return query;
         }
 
-        private IQueryable<Announcement> SearchByCity(int CityId, IQueryable<Announcement> query)
+        private IQueryable<Advertisement> SearchByCity(int cityId, IQueryable<Advertisement> query)
         {
-            if (CityId > 0)
+            if (cityId > 0)
             {
-                query = query.Where(a => a.CityId == CityId);
+                query = query.Where(a => a.CityId == cityId);
             }
 
             return query;
         }
 
-        private IQueryable<Announcement> SearchByCordinate(int Distance, int CityId, IQueryable<Announcement> query)
+        private IQueryable<Advertisement> SearchByCordinate(int distance, int cityId, IQueryable<Advertisement> query)
         {
-            if (Distance > 0 && CityId > 0)
+            if (distance > 0 && cityId > 0)
             {
-                query = searchService.SearchAnnouncement();
-                var city = GetCityById(CityId);
-                var cord = new CordCalculation(city, Distance);
+                query = searchService.searchAdvertisement();
+                var city = GetCityById(cityId);
+                var cord = new CordCalculation(city, distance);
 
                 query = query.Where(a => a.cities.lat > cord.MinLat
                 && a.cities.lat < cord.MaxLat
@@ -66,12 +66,12 @@ namespace AnonseWeb.Feature.Search
 
         private City GetCityById(int CityId)
         {
-            return searchService.GetCityId(CityId);
+            return searchService.getCityId(CityId);
         }
 
         public void RebuildModelSearch(SearchViewModel searchModel)
         {
-            searchModel.CityList = announcementService.getAllCity();
+            searchModel.CityList = advertisementService.getAllCity();
         }
 
     }

@@ -6,11 +6,11 @@ using System.Web;
 
 namespace AnonseWeb.ViewModel
 {
-    public class HomeViewModel
+    public class UserAdvertisementViewModel
     {
-        public HomeViewModel(IEnumerable<Advertisement> advertisementList)
+        public UserAdvertisementViewModel(IEnumerable<Advertisement> AdvertisementList)
         {
-            AdvertisementList = advertisementList;
+            this.AdvertisementList = AdvertisementList;
         }
 
         public IEnumerable<Advertisement> AdvertisementList { get; set; }

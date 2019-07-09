@@ -6,13 +6,13 @@ using System.Web;
 
 namespace AnonseWeb.ViewModel
 {
-    public class DetailAnnouncementViewModel
+    public class DetailAdvertisementViewModel
     {
         [Display(Name = "Tytuł ogłoszenia")]
-        public string AnnouncementName { get; set; }
+        public string AdvertisementName { get; set; }
 
         [Display(Name = "Opis")]
-        public string AnnouncementDesc { get; set; }
+        public string AdvertisementDesc { get; set; }
 
         [Display(Name = "Data rozpoczęcia ogłoszenia")]
         [DisplayFormat(DataFormatString = "{0:d}")]

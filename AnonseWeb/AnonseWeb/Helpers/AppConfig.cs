@@ -8,13 +8,13 @@ namespace AnonseWeb.Helpers
 {
     public class AppConfig
     {
-        private static string _imagesAnnouncementPath = ConfigurationManager.AppSettings["AnnouncementFolder"];
+        private static string _imagesAdvertisementPath = ConfigurationManager.AppSettings["AdvertisementFolder"];
 
-        public static string AnnouncementFolderPath
+        public static string AdvertisementFolderPath
         {
             get
             {
-                return _imagesAnnouncementPath;
+                return _imagesAdvertisementPath;
             }
         }
     }

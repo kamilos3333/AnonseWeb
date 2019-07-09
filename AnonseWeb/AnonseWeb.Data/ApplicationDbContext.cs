@@ -12,7 +12,7 @@ namespace AnonseWeb.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<File> Files { get; set; }
-        public DbSet<Announcement> Announcements { get; set; }
+        public DbSet<Advertisement> Advertisements { get; set; }
 
         public class ApplicationUser : IdentityUser
         {
@@ -26,7 +26,7 @@ namespace AnonseWeb.Data
         }
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("Database", throwIfV1Schema: false)
         {
         }
 

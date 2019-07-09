@@ -9,10 +9,10 @@ namespace AnonseWeb.Helpers
 {
     public static class UrHelpers
     {
-        public static string AnnouncementImgPath(this UrlHelper helper, string nameAnnouncementFolder)
+        public static string AdvertisementImgPath(this UrlHelper helper, string nameAdvertisementFolder)
         {
-            var AnnouncementImgFolder = AppConfig.AnnouncementFolderPath;
-            var path = Path.Combine(AnnouncementImgFolder, nameAnnouncementFolder);
+            var AdvertisementImgFolder = AppConfig.AdvertisementFolderPath;
+            var path = Path.Combine(AdvertisementImgFolder, nameAdvertisementFolder);
             var pathFolder = helper.Content(path);
 
             return pathFolder;

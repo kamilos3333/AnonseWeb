@@ -11,29 +11,29 @@ namespace AnonseWeb.Feature
 {
     public class NewImage
     {
-        private IAnnouncementService announcementService;
-        public NewImage(IAnnouncementService _announcementService)
+        private IAdvertisementService advertisementService;
+        public NewImage(IAdvertisementService _advertisementService)
         {
-            announcementService = _announcementService;
+            advertisementService = _advertisementService;
         }
 
-        public void CreateNewImage(HttpPostedFileBase image, int AnnouncementId)
+        public void CreateNewImage(HttpPostedFileBase image, int advertisementId)
         {
             var fileName = ImageUpload.InsertImage(image);
 
-            InsertImageToDatabase(AnnouncementId, fileName);
+            InsertImageToDatabase(advertisementId, fileName);
         }
 
-        private void InsertImageToDatabase(int AnnouncementId, string fileName)
+        private void InsertImageToDatabase(int advertisementId, string fileName)
         {
             File file = new File
             {
-                AnnouncementId = AnnouncementId,
+                AdvertisementId = advertisementId,
                 FileName = fileName
             };
 
-            announcementService.InsertFile(file);
-            announcementService.Save();
+            advertisementService.insertFile(file);
+            advertisementService.save();
         }
     }
 }

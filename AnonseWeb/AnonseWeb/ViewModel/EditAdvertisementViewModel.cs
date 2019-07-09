@@ -1,20 +1,14 @@
-﻿using AnonseWeb.Enums;
-using AnonseWeb.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace AnonseWeb.ViewModel
 {
-    public class EditAnnouncementViewModel
+    public class EditAdvertisementViewModel
     {
-        public int AnnouncementId { get; set; }
+        public int AdvertisementId { get; set; }
 
         [Required]
         [Display(Name = "Tytuł ogloszenia")]
-        public string AnnouncementName { get; set; }
+        public string AdvertisementName { get; set; }
 
         [Required]
         [Display(Name = "Opis")]

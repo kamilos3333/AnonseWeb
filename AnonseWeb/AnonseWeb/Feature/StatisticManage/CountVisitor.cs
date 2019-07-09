@@ -8,17 +8,17 @@ namespace AnonseWeb.Feature.Statistic
 {
     public class CountVisitor
     {
-        private IAnnouncementService announcementService;
-        public CountVisitor(IAnnouncementService _announcementService)
+        private IAdvertisementService advertisementService;
+        public CountVisitor(IAdvertisementService _advertisementService)
         {
-            announcementService = _announcementService;
+            advertisementService = _advertisementService;
         }
 
         public void IncreaseVisitor(int id)
         {
-            var count = announcementService.getAnnouncementId(id).Visitor; 
-            announcementService.getAnnouncementId(id).Visitor = ++count;
-            announcementService.Save();
+            var count = advertisementService.getAdvertisementId(id).Visitor;
+            advertisementService.getAdvertisementId(id).Visitor = ++count;
+            advertisementService.save();
         }
     }
 }

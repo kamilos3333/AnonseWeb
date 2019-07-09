@@ -32,7 +32,7 @@ namespace AnonseWeb.Manager
 
         private static string SetFolderPath()
         {
-            return AppConfig.AnnouncementFolderPath;
+            return AppConfig.AdvertisementFolderPath;
         }
     }
 }

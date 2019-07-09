@@ -21,7 +21,7 @@ namespace AnonseWeb
 
             container.RegisterType<AccountController>(new InjectionConstructor());
             container.RegisterType<ManageController>(new InjectionConstructor());
-            container.RegisterType<IAnnouncementService, AnnouncementService>();
+            container.RegisterType<IAdvertisementService, AdvertisementService>();
             container.RegisterType<ISearchService, SearchService>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

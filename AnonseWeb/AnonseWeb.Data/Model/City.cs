@@ -16,6 +16,6 @@ namespace AnonseWeb.Model
         public double lat { get; set; }
         public double lon { get; set; }
 
-        public virtual ICollection<Announcement> announcements { get; set; }
+        public virtual ICollection<Advertisement> advertisements { get; set; }
     }
 }
