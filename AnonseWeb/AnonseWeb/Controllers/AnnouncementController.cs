@@ -37,7 +37,7 @@ namespace AnonseWeb.Controllers
         }
         
         [HttpPost]
-        [ValidateInput(true)]
+        [ValidateInput(false)]
         public ActionResult Create(CreateAnnouncementViewModel model)
         {
             if (ModelState.IsValid)
@@ -61,6 +61,7 @@ namespace AnonseWeb.Controllers
             {
                 return HttpNotFound();
             }
+
             countVisitor.IncreaseVisitor(announcementId);
             return View(Mapper.Map(detail, new DetailAnnouncementViewModel()));
         }
@@ -82,6 +83,8 @@ namespace AnonseWeb.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
+        [Authorize]
         public ActionResult Edit(EditAnnouncementViewModel model)
         {
             if (ModelState.IsValid)

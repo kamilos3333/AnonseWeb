@@ -23,7 +23,8 @@ namespace AnonseWeb.Controllers
             HomeViewModel model = new HomeViewModel(announcementService.AnnouncementForClient());
             return View(model);
         }
-        
+
+        [ValidateInput(false)]
         public ActionResult AnnouncementSearch(SearchViewModel searchModel)
         {
             searchFeature.RebuildModelSearch(searchModel);
