@@ -67,6 +67,7 @@ namespace AnonseWeb.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult Edit(int announcementId)
         {
            if (announcementId <= 0)
@@ -84,7 +85,6 @@ namespace AnonseWeb.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        [Authorize]
         public ActionResult Edit(EditAnnouncementViewModel model)
         {
             if (ModelState.IsValid)
