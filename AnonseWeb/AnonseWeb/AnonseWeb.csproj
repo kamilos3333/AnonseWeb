@@ -253,9 +253,9 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="CustomValidation\FileAttribute .cs" />
     <Compile Include="Enums\Status.cs" />
-    <Compile Include="Feature\DeleteAnnouncement.cs" />
-    <Compile Include="Feature\EditAnnouncement.cs" />
-    <Compile Include="Feature\NewAnnouncement.cs" />
+    <Compile Include="Feature\AnnouncementManage\DeleteAnnouncement.cs" />
+    <Compile Include="Feature\AnnouncementManage\EditAnnouncement.cs" />
+    <Compile Include="Feature\AnnouncementManage\NewAnnouncement.cs" />
     <Compile Include="Feature\NewImage.cs" />
     <Compile Include="Feature\SearchManage\SearchFeature.cs" />
     <Compile Include="Feature\StatisticManage\CountVisitor.cs" />
